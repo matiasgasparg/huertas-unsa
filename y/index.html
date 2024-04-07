@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huertas UNSa Salta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Archivo CSS personalizado -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js"></script>
+    <script>
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+          apiKey: "AIzaSyCSqWMtUzPPc4gbQj_wD0yjKvPnIt978B4",
+          authDomain: "huertas-salta-unsa.firebaseapp.com",
+          projectId: "huertas-salta-unsa",
+          storageBucket: "huertas-salta-unsa.appspot.com",
+          messagingSenderId: "542837286989",
+          appId: "1:542837286989:web:b25d491e34586785705404",
+          measurementId: "G-11NHVW7WEL"
+        };
+
+        // Inicializa Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-lighter">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="#">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="./admin/admin.html">Iniciar Sesion!</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="edit-button" style="display: none;">Modificar Noticias!</button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+<!-- Nuevo contenedor para el texto "UNSa-Facultad Naturales Huertas" -->
+<div class="titulo-container">
+    <div class="titulo-huertas">UNSa-Facultad Naturales-Ing.Agronoma-Huertas</div> <!-- Texto agregado -->
+</div>
+
+<main>
+    <section class="d-flex justify-content-center align-items-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carousel-inner">
+                <!-- Aquí se actualizará dinámicamente el contenido del carousel -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+</main>
+
+<main>
+    <!-- Sección de Noticias -->
+    <section class="noticias">
+        <div class="container">
+            <h2>Noticias</h2>
+            <div class="row" id="noticias-container">
+                <!-- Aquí se cargarán dinámicamente las noticias desde JavaScript -->
+            </div>
+        </div>
+    </section>
+</main>
+<main>
+ 
+
+    <!-- Sección de Registro de Personas -->
+    <section class="registro">
+        <div class="container">
+            <h2>Registro de Personas</h2>
+            <form id="registro-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>            <div id="mensaje"></div>
+
+            </form>
+
+        </div>
+    </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="obtener.js"></script>
+<script src="novedades.js"></script>
+<script src="registro.js"></script>
+
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="logo.png" alt="Logo 1" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <img src="logo.png" alt="Logo 2" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

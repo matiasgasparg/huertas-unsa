@@ -1,0 +1,128 @@
+/* Estilos para el body */
+body {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding-top: 56px; /* Altura del header */
+}
+
+/* Estilos para el header */
+header {
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Estilos para el main */
+main {
+    padding-top: 50px; /* Altura del header */
+    padding-bottom: 50px; /* Espacio para el footer */
+    background-color: #f8f9fa;
+
+}
+/* Estilos para el contenedor del título */
+.titulo-container {
+    position: relative; /* Establece una posición relativa para que la línea verde se posicione correctamente */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Ajusta el margen superior */
+    margin-bottom: 20px; /* Ajusta el margen inferior */
+    background-color: #258543; /* Color verde */
+    height: 50px; /* Modifica el grosor de la línea */
+
+
+}
+
+/* Estilos para el texto "UNSa-Facultad Naturales Huertas" */
+.titulo-huertas {
+    font-size: 30px;
+    color: #ffffff; /* Color verde */
+    margin-top: 5px; /* Ajusta el margen superior */
+}
+
+
+
+
+/* Estilos para las tarjetas de noticias */
+.card  {
+    background-color: #ffffff; /* Color de fondo del contenedor de la noticia */
+    border: 1px solid #ced4da; /* Borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto de zoom y sombra */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre la tarjeta */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta la escala al pasar el mouse sobre la tarjeta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave al pasar el mouse sobre la tarjeta */
+}
+
+/* Estilos para el contenido del body */
+.container {
+    margin-top: 50px; /* Espaciado superior */
+}
+
+.section-title {
+    font-size: 24px; /* Tamaño de fuente del título de la sección */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilos para las columnas */
+.column {
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+.column img {
+    max-width: 100%; /* Imagen ajustada al 100% del ancho de la columna */
+}
+
+/* Efecto de zoom al pasar el mouse sobre la imagen */
+.carousel-item img:hover {
+    transform: scale(1.1); /* Aumenta la escala de la imagen al 110% */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave al pasar el mouse sobre la tarjeta */
+
+}
+
+/* Estilos CSS para el carrusel */
+#carouselExampleIndicators {
+    margin: auto; /* Alinea el carrusel horizontalmente */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Cambiar el color de las flechas a negro */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%); /* Invertir el color de las flechas para que se vean claras sobre fondo oscuro */
+}
+
+.calendar-section {
+    padding: 50px 0; /* Espaciado interno */
+}
+
+.calendar-section iframe {
+    max-width: 100%; /* Asegura que el calendario se ajuste al ancho del contenedor */
+}
+/* Estilos para el footer */
+footer {
+    position: relative; /* Establece una posición relativa */
+    margin-top: -100px; /* Ajusta el margen superior negativo para compensar el espacio ocupado */
+    width: 100%; /* Establece el ancho del footer para que ocupe toda la pantalla */
+    background-color: #258543; /* Color de fondo del footer */
+    color: #ffffff; /* Color del texto en el footer */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilos para las imágenes en el footer */
+footer img {
+    max-width: 40px; /* Ancho máximo de las imágenes */
+    margin: 10px; /* Espaciado entre las imágenes */
+}
+
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: auto; /* Para dispositivos móviles, el carrusel se ajustará automáticamente */
+}}
+

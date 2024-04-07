@@ -1,0 +1,56 @@
+/* Estilos para el encabezado */
+header {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px;
+}
+
+.navbar-brand img {
+    max-height: 100px; /* Ajusta la altura del logo según sea necesario */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Cambia el color del texto del enlace según tu preferencia */
+    margin-right: 20px; /* Ajusta el espacio entre los enlaces */
+}
+
+/* Estilos para el título de la página */
+.full-width-title {
+    background-color: #258543; /* Mismo color de fondo que el encabezado */
+    color: #fff; /* Cambia el color del texto según tu preferencia */
+    padding: 20px 0; /* Ajusta el espacio interno según sea necesario */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para el contenido de la noticia */
+.container {
+    margin-top: 50px; /* Ajusta el espacio superior según sea necesario */
+}
+
+#newsSubtitle {
+    color: #0f4c81; /* Cambia el color del subtítulo según tu preferencia */
+}
+
+#newsDate {
+    margin-top: 20px; /* Ajusta el espacio superior según sea necesario */
+}
+
+#newsImage {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 10px; /* Agrega bordes redondeados */
+    margin-top: 20px; /* Ajusta el espacio superior según sea necesario */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #258543; /* Color de fondo del footer */
+    color: #ffffff; /* Color del texto en el footer */
+    padding: 20px 0; /* Espaciado interno en el footer */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilos para las imágenes en el footer */
+footer img {
+    max-width: 40px; /* Ancho máximo de las imágenes */
+    margin: 10px; /* Espaciado entre las imágenes */
+}
