@@ -17,7 +17,7 @@ document.getElementById('registro-form').addEventListener('submit', function(eve
     console.log(userData)
 
     // Enviar solicitud HTTP POST al servidor
-    fetch('http://127.0.0.1:5000/users/crear', {
+    fetch('https://unsahuertas.pythonanywhere.com/users/crear', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

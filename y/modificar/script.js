@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para cargar las noticias existentes desde el servidor
     function loadNews() {
-        fetch('http://127.0.0.1:5000/noticia/')
+        fetch('https://unsahuertas.pythonanywhere.com/noticia/')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No se pudieron obtener las noticias del servidor');
@@ -147,6 +147,8 @@ function showEditNewsForm(noticia) {
                 // Si la respuesta es exitosa, cerrar el modal y recargar las noticias para mostrar los cambios
                 $('#editNewsModal').modal('hide');
                 loadNews();
+                window.location.reload();
+
             } catch (error) {
                 console.error('Error al actualizar la noticia:', error);
             }
@@ -189,7 +191,7 @@ updateImageButton.addEventListener('click', async () => {
 
 // Función para actualizar la noticia en el servidor con los campos actualizados
 function updateNewsField(noticiaId, updatedFields) {
-    const url = `http://127.0.0.1:5000/noticia/${noticiaId}`;
+    const url = `https://unsahuertas.pythonanywhere.com/noticia/${noticiaId}`;
     console.log('Datos actualizados:', updatedFields);
 
     return fetch(url, {
@@ -207,7 +209,7 @@ function updateNewsField(noticiaId, updatedFields) {
     // Función para eliminar una noticia
     function deleteNews(newsId) {
         // Realizar una solicitud DELETE para eliminar la noticia del servidor
-        fetch(`http://127.0.0.1:5000/noticia/${newsId}`, {
+        fetch(`https://unsahuertas.pythonanywhere.com/noticia/${newsId}`, {
             method: 'DELETE'
         })
         .then(response => {
@@ -244,7 +246,7 @@ saveNewsBtn.addEventListener('click', function() {
     };
 
     // Realizar una solicitud POST para crear una nueva noticia
-    fetch('http://127.0.0.1:5000/noticia/crear', {
+    fetch('https://unsahuertas.pythonanywhere.com/noticia/crear', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

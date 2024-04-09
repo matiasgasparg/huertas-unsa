@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Verificar si se ha proporcionado un ID de noticia válido
     if (noticiaId) {
         // Realizar una solicitud al servidor para obtener los detalles de la noticia
-        fetch(`http://127.0.0.1:5000/noticia/${noticiaId}`)
+        fetch(`https://unsahuertas.pythonanywhere.com/noticia/${noticiaId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No se pudo obtener los detalles de la noticia del servidor');

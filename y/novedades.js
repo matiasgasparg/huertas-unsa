@@ -1,7 +1,7 @@
 // Función para obtener y mostrar las noticias desde el servidor
 function getNoticiasFromServer() {
     // Realizar una solicitud GET al servidor para obtener todos los datos de las noticias
-    fetch('http://127.0.0.1:5000/noticia/')
+    fetch('https://unsahuertas.pythonanywhere.com/noticia/')
         .then(response => {
             // Verificar si la respuesta del servidor es exitosa
             if (!response.ok) {

@@ -36,36 +36,53 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="#">Inicio</a>
+                        <a class="nav-link text-muted" href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="#">Sobre Nosotros</a>
+                        <a class="nav-link text-muted" href="#noticias">Noticias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="#">Servicios</a>
+                        <a class="nav-link text-muted" href="#registro">Registro!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="#calendario">Calendario!</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-muted" href="./admin/admin.html">Iniciar Sesion!</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="edit-button" style="display: none;">Modificar Noticias!</button>
-                    </li>
                 </ul>
-            </div>
+        <!-- Agregar sección para mostrar la información del clima en el header -->
 
+        <div class="weather-info">
+            <p id="datetime"></p>
+            <p id="min-temperature"></p>
+            <p id="max-temperature"></p>
+            <p id="day-icon-phrase"></p>
+            <p id="night-icon-phrase"></p>
+            <p id="precipitation"></p>
+            <div id="weather-icon"></div> <!-- Elemento para mostrar el icono de clima -->
+
+        </div>
+                    
         </nav>
     </header>
 
 <!-- Nuevo contenedor para el texto "UNSa-Facultad Naturales Huertas" -->
 <div class="titulo-container">
-    <div class="titulo-huertas">UNSa-Facultad Naturales-Ing.Agronoma-Huertas</div> <!-- Texto agregado -->
+    <div class="titulo-huertas">UNSa-Facultad Ciencias Naturales-Ing.Agronomica-Huertas</div> <!-- Texto agregado -->
 </div>
 
 <main>
-    <section class="d-flex justify-content-center align-items-center">
+    <section class="d-flex justify-content-center align-items-center" id="inicio">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" id="carousel-inner">
-                <!-- Aquí se actualizará dinámicamente el contenido del carousel -->
+                <div class="carousel-item active">
+                    <img src="imagen1.jpg" class="d-block w-100" style="width: 100%;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagen2.jpg" class="d-block w-100" style="width: 100%;" alt="...">
+                </div>
+                <!-- Agrega más imágenes aquí si es necesario -->
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -76,12 +93,13 @@
                 <span class="sr-only">Siguiente</span>
             </a>
         </div>
+        
     </section>
 </main>
 
 <main>
     <!-- Sección de Noticias -->
-    <section class="noticias">
+    <section class="noticias" id="noticias">
         <div class="container">
             <h2>Noticias</h2>
             <div class="row" id="noticias-container">
@@ -94,7 +112,7 @@
  
 
     <!-- Sección de Registro de Personas -->
-    <section class="registro">
+    <section class="registro" id="registro">
         <div class="container">
             <h2>Registro de Personas</h2>
             <form id="registro-form">
@@ -121,22 +139,31 @@
         </div>
     </section>
 </main>
-
+    <!-- Sección para el calendario de Google -->
+    <section class="calendario" id="calendario">
+        <div class="container">
+            <h2>Calendario</h2>
+            <!-- Inserta el iframe del calendario de Google -->
+            <iframe src="https://calendar.google.com/calendar/embed?src=unsahuertas%40gmail.com&ctz=America%2FArgentina%2FSalta" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </section>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="obtener.js"></script>
 <script src="novedades.js"></script>
 <script src="registro.js"></script>
+<script src="tiempo.js"></script>
+
 
 </body>
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="logo.png" alt="Logo 1" class="img-fluid">
+                <img src="logo1.png" alt="Logo 1" class="img-fluid">
             </div>
             <div class="col-md-6">
-                <img src="logo.png" alt="Logo 2" class="img-fluid">
+                <img src="logo2.png" alt="Logo 2" class="img-fluid">
             </div>
         </div>
     </div>

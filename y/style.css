@@ -1,13 +1,14 @@
 /* Estilos para el body */
 body {
     background-color: #f8f9fa; /* Color de fondo */
-    padding-top: 56px; /* Altura del header */
+    padding-top: 46px; /* Altura del header */
 }
 
 /* Estilos para el header */
 header {
     top: 0;
     width: 100%;
+    height:10%;
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
@@ -20,15 +21,15 @@ main {
 }
 /* Estilos para el contenedor del título */
 .titulo-container {
-    position: relative; /* Establece una posición relativa para que la línea verde se posicione correctamente */
+    position: relative; /* Establece una posición relativa */
     text-align: center; /* Centra el texto horizontalmente */
     margin-top: 20px; /* Ajusta el margen superior */
     margin-bottom: 20px; /* Ajusta el margen inferior */
     background-color: #258543; /* Color verde */
-    height: 50px; /* Modifica el grosor de la línea */
-
-
+    height: auto; /* Altura automática para adaptarse al contenido */
+    padding: 10px; /* Añade un espacio interno alrededor del título */
 }
+
 
 /* Estilos para el texto "UNSa-Facultad Naturales Huertas" */
 .titulo-huertas {
@@ -79,8 +80,14 @@ main {
 .carousel-item img:hover {
     transform: scale(1.1); /* Aumenta la escala de la imagen al 110% */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave al pasar el mouse sobre la tarjeta */
-
 }
+
+/* Estilos para las imágenes del carrusel */
+.carousel-item img {
+    max-width: 100%; /* Imagen ajustada al 100% del ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
 
 /* Estilos CSS para el carrusel */
 #carouselExampleIndicators {
@@ -104,25 +111,47 @@ main {
 .calendar-section iframe {
     max-width: 100%; /* Asegura que el calendario se ajuste al ancho del contenedor */
 }
+/* Estilos para la sección de Registro de Personas */
+.registro {
+    margin-bottom: 50px; /* Agrega un margen inferior para separar la sección del footer */
+}
 /* Estilos para el footer */
 footer {
     position: relative; /* Establece una posición relativa */
-    margin-top: -100px; /* Ajusta el margen superior negativo para compensar el espacio ocupado */
     width: 100%; /* Establece el ancho del footer para que ocupe toda la pantalla */
     background-color: #258543; /* Color de fondo del footer */
     color: #ffffff; /* Color del texto en el footer */
     text-align: center; /* Alineación del texto en el centro */
+    margin-top: 50px; /* Agrega un margen superior para separar el footer del contenido anterior */
 }
 
 /* Estilos para las imágenes en el footer */
 footer img {
-    max-width: 40px; /* Ancho máximo de las imágenes */
+    width: 150px; /* Ancho fijo para las imágenes */
+    height: 150px; /* Alto fijo para las imágenes */
     margin: 10px; /* Espaciado entre las imágenes */
 }
 
+/* Estilos para la sección de información del clima */
+.weather-info {
+    margin-left: auto; /* Alinear a la derecha */
+    margin-right: 20px; /* Margen derecho para separación */
+    display: flex; /* Utilizar flexbox */
+    flex-direction: column; /* Establecer la dirección de los elementos como columna */
+}
 
-@media (max-width: 768px) {
-    .carousel-item {
-        height: auto; /* Para dispositivos móviles, el carrusel se ajustará automáticamente */
-}}
+.weather-info h3 {
+    margin-bottom: 5px; /* Espaciado inferior */
+    font-size: 10px; /* Tamaño de fuente */
+}
+
+.weather-info p {
+    margin-top: 5px; /* Espaciado superior */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #6c757d; /* Color de texto */
+}
+
+
+
+
 
