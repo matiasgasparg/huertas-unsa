@@ -51,122 +51,136 @@
                         <a class="nav-link text-muted" href="./admin/admin.html">Iniciar Sesion!</a>
                     </li>
                 </ul>
-        <!-- Agregar sección para mostrar la información del clima en el header -->
-
-        <div class="weather-info">
-            <p id="datetime"></p>
-            <p id="min-temperature"></p>
-            <p id="max-temperature"></p>
-            <p id="day-icon-phrase"></p>
-            <p id="night-icon-phrase"></p>
-            <p id="precipitation"></p>
-            <div id="weather-icon"></div> <!-- Elemento para mostrar el icono de clima -->
-
-        </div>
-                    
+                <!-- Agregar sección para mostrar la información del clima en el header -->
+                <div class="weather-info">
+                    <p id="datetime"></p>
+                    <p id="min-temperature"></p>
+                    <p id="max-temperature"></p>
+                    <p id="day-icon-phrase"></p>
+                    <p id="night-icon-phrase"></p>
+                    <p id="precipitation"></p>
+                    <div id="weather-icon"></div> <!-- Elemento para mostrar el icono de clima -->
+                </div>
+            </div>
         </nav>
     </header>
 
-<!-- Nuevo contenedor para el texto "UNSa-Facultad Naturales Huertas" -->
-<div class="titulo-container">
-    <div class="titulo-huertas">UNSa-Facultad Ciencias Naturales-Ing.Agronomica-Huertas</div> <!-- Texto agregado -->
-</div>
+    <!-- Nuevo contenedor para el texto "UNSa-Facultad Naturales Huertas" -->
+    <div class="titulo-container">
+        <div class="titulo-huertas">UNSa-Facultad Ciencias Naturales-Ing.Agronomica-Huertas</div> <!-- Texto agregado -->
+    </div>
 
-<main>
-    <section class="d-flex justify-content-center align-items-center" id="inicio">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" id="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imagen1.jpg" class="d-block w-100" style="width: 100%;" alt="...">
+    <main>
+
+        <section class="d-flex justify-content-center align-items-center" id="inicio">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagen1.jpg" class="d-block w-100" style="height: auto;" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagen2.jpg" class="d-block w-100" style="height: auto;" alt="...">
+                    </div>
+                    <!-- Agrega más imágenes aquí si es necesario -->
                 </div>
-                <div class="carousel-item">
-                    <img src="imagen2.jpg" class="d-block w-100" style="width: 100%;" alt="...">
-                </div>
-                <!-- Agrega más imágenes aquí si es necesario -->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
-        
-    </section>
-</main>
+        </section>
 
-<main>
-    <!-- Sección de Noticias -->
-    <section class="noticias" id="noticias">
-        <div class="container">
-            <h2>Noticias</h2>
-            <div class="row" id="noticias-container">
-                <!-- Aquí se cargarán dinámicamente las noticias desde JavaScript -->
+        <!-- Sección de Noticias -->
+        <section class="noticias" id="noticias">
+            <div class="container">
+                <h2>Noticias</h2>
+                <div class="row" id="noticias-container">
+                    <!-- Aquí se cargarán dinámicamente las noticias desde JavaScript -->
+                </div>
             </div>
-        </div>
-    </section>
-</main>
-<main>
- 
+        </section>
 
-    <!-- Sección de Registro de Personas -->
-    <section class="registro" id="registro">
-        <div class="container">
-            <h2>Registro de Personas</h2>
-            <form id="registro-form">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+        <!-- Sección de Cultivos -->
+        <section class="cultivos" id="cultivos">
+            <div class="container">
+                <h2 class="text-center">Cultivos</h2>
+                <div class="row" id="cultivos-container">
+                    <!-- Aquí se cargarán dinámicamente las tarjetas de cultivos desde JavaScript -->
                 </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo:</label>
-                    <input type="email" class="form-control" id="correo" name="correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>            <div id="mensaje"></div>
-
-            </form>
-
-        </div>
-    </section>
-</main>
-    <!-- Sección para el calendario de Google -->
-    <section class="calendario" id="calendario">
-        <div class="container">
-            <h2>Calendario</h2>
-            <!-- Inserta el iframe del calendario de Google -->
-            <iframe src="https://calendar.google.com/calendar/embed?src=unsahuertas%40gmail.com&ctz=America%2FArgentina%2FSalta" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </section>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="obtener.js"></script>
-<script src="novedades.js"></script>
-<script src="registro.js"></script>
-<script src="tiempo.js"></script>
-
-
-</body>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="logo1.png" alt="Logo 1" class="img-fluid">
             </div>
-            <div class="col-md-6">
-                <img src="logo2.png" alt="Logo 2" class="img-fluid">
+        </section>
+
+        <!-- Sección de Registro de Personas -->
+        <section class="registro" id="registro">
+            <div class="container">
+                <h2>Registro de Personas</h2>
+                <form id="registro-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div id="mensaje"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección para el calendario de Google -->
+        <section class="calendario" id="calendario">
+            <div class="container">
+                <h2>Calendario</h2>
+                <!-- Inserta el iframe del calendario de Google -->
+                <iframe src="https://calendar.google.com/calendar/embed?src=unsahuertas%40gmail.com&ctz=America%2FArgentina%2FSalta" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="obtener.js"></script>
+    <script src="novedades.js"></script>
+    <script src="registro.js"></script>
+    <script src="tiempo.js"></script>
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div class="modal fade" id="imagenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="modal-img img-fluid" alt="Imagen Ampliada">
+                </div>
             </div>
         </div>
     </div>
-</footer>
 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="logo1.png" alt="Logo 1" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <img src="logo2.png" alt="Logo 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>

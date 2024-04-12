@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             weatherIcon.style.width = "100px"; // Reducir el ancho del icono a la mitad
             weatherIcon.style.height = "auto"; // Altura automática para mantener la proporción
             weatherIcon.style.position = "absolute"; // Establecer posición absoluta
-            weatherIcon.style.right = "200px"; // Alinear a la derecha
+            weatherIcon.style.right = "100px"; // Alinear a la derecha
             weatherIcon.style.bottom = "90px"; // Alinear en la parte inferior
             weatherIcon.style.zIndex = "-1"; // Establecer z-index para colocar detrás del texto
 

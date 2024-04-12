@@ -61,6 +61,8 @@ main {
 .container {
     margin-top: 50px; /* Espaciado superior */
 }
+/* Estilos para el contenido del body */
+
 
 .section-title {
     font-size: 24px; /* Tamaño de fuente del título de la sección */
@@ -138,7 +140,11 @@ footer img {
     margin-right: 20px; /* Margen derecho para separación */
     display: flex; /* Utilizar flexbox */
     flex-direction: column; /* Establecer la dirección de los elementos como columna */
+    border: 2px solid #ced4da; /* Agregar borde */
+    border-radius: 8px; /* Agregar bordes redondeados */
+    padding: 10px; /* Añadir un espacio interno alrededor del contenido */
 }
+
 
 .weather-info h3 {
     margin-bottom: 5px; /* Espaciado inferior */
@@ -150,8 +156,27 @@ footer img {
     font-size: 14px; /* Tamaño de fuente */
     color: #6c757d; /* Color de texto */
 }
+/* CSS para el modal */
+.modal-content {
+    max-width: 75%; /* Establece el ancho máximo del contenido del modal */
+}
+
+/* CSS para la imagen dentro del modal */
+.modal-img {
+    max-width: 100%; /* Establece el ancho máximo de la imagen dentro del modal */
+    height: auto; /* Ajusta automáticamente la altura según el ancho máximo */
+}
+/* CSS para la imagen dentro del modal */
+.modal-body {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
 
 
-
-
-
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 100%; /* Ajustar el ancho al 100% de la pantalla */
+        max-height: 50vh; /* Establecer una altura máxima relativa al tamaño de la pantalla */
+    }
+}

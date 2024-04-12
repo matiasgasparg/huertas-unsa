@@ -12,9 +12,11 @@ function getNoticiasFromServer() {
         })
         .then(noticias => {
             // Filtrar las noticias que tengan "noticia" como subtítulo
-            const noticiasFiltradas = noticias.filter(noticia => noticia.subtitulo.toLowerCase() === 'noticia');
+            const noticiasFiltradas = noticias.filter(noticia => noticia.subtitulo.toLowerCase() === 'portada');
             // Llamar a la función para organizar y mostrar las noticias en el carousel
             displayNoticiasCarousel(noticiasFiltradas);
+            // Llamar a la función para abrir la imagen ampliada en el modal
+            openImageModal();
         })
         .catch(error => {
             // Manejar errores en caso de que la solicitud falle
@@ -22,7 +24,6 @@ function getNoticiasFromServer() {
         });
 }
 
-// Función para organizar y mostrar las noticias en el carousel
 function displayNoticiasCarousel(noticias) {
     // Obtener el elemento del carousel inner
     var carouselInner = document.getElementById('carousel-inner');
@@ -38,7 +39,14 @@ function displayNoticiasCarousel(noticias) {
         var img = document.createElement('img');
         img.classList.add('d-block', 'mx-auto', 'img-zoom');
         img.src = noticia.url[0]; // Se accede al primer elemento del arreglo de URLs de imagen
-        img.style.maxWidth = '75%';
+
+        // Ajustar el tamaño de la imagen en función del ancho de la pantalla
+        if (window.innerWidth < 768) {
+            img.style.maxWidth = '100%'; // Ajustar al ancho completo de la pantalla en dispositivos móviles
+        } else {
+            img.style.maxWidth = '75%'; // Ajustar al 75% del ancho de la pantalla en otros dispositivos
+        }
+
         img.alt = 'Imagen ' + (index + 1);
         var caption = document.createElement('div');
         caption.classList.add('carousel-caption', 'd-none', 'd-md-block');
@@ -48,6 +56,16 @@ function displayNoticiasCarousel(noticias) {
         carouselItem.appendChild(img);
         carouselItem.appendChild(caption);
         carouselInner.appendChild(carouselItem);
+    });
+}
+
+
+// Función para abrir la imagen ampliada en el modal
+function openImageModal() {
+    $('.carousel-item img').on('click', function() {
+        var src = $(this).attr('src');
+        $('.modal-img').attr('src', src);
+        $('#imagenModal').modal('show');
     });
 }
 
