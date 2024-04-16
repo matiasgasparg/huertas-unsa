@@ -31,8 +31,8 @@ loginForm.addEventListener('submit', async (event) => {
             localStorage.setItem('jwt_token', token);
             localStorage.setItem('admin', admin);
 
-            // Redirigir al usuario al index.html u otra página después del inicio de sesión exitoso
-            window.location.href = '../modificar/modificar.html';
+            // Redirigir al usuario a admin.html después del inicio de sesión exitoso
+            window.location.href = '../adminOption/admin.html';
         } else {
             // Manejar errores de inicio de sesión
             mostrarMensajeError();

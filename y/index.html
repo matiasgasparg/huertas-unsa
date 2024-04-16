@@ -93,11 +93,20 @@
                 </a>
             </div>
         </section>
-
+        <!-- Sección de Huertas -->
+        <section class="huertas" id="huertas">
+            <div class="container">
+                <h2 class="text-center">Huertas</h2>
+                <div class="row" id="huertas-container">
+                    <!-- Aquí se cargarán dinámicamente las tarjetas de cultivos desde JavaScript -->
+                </div>
+            </div>
+        </section>
+   
         <!-- Sección de Noticias -->
         <section class="noticias" id="noticias">
             <div class="container">
-                <h2>Noticias</h2>
+                <h2 class="text-center">Noticias</h2>
                 <div class="row" id="noticias-container">
                     <!-- Aquí se cargarán dinámicamente las noticias desde JavaScript -->
                 </div>
@@ -114,32 +123,8 @@
             </div>
         </section>
 
-        <!-- Sección de Registro de Personas -->
-        <section class="registro" id="registro">
-            <div class="container">
-                <h2>Registro de Personas</h2>
-                <form id="registro-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="correo">Correo:</label>
-                        <input type="email" class="form-control" id="correo" name="correo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <div id="mensaje"></div>
-                </form>
-            </div>
-        </section>
+
+ 
 
         <!-- Sección para el calendario de Google -->
         <section class="calendario" id="calendario">
@@ -154,9 +139,9 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="obtener.js"></script>
     <script src="novedades.js"></script>
-    <script src="registro.js"></script>
+    <script src="obtener.js"></script>
+
     <script src="tiempo.js"></script>
     <!-- Modal para mostrar la imagen ampliada -->
     <div class="modal fade" id="imagenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

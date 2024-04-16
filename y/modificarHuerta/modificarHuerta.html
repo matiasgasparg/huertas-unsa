@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Huertas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<header>
+    <h1>Resumen de Huertas</h1>
+    <button id="addHuertaBtn">+</button>
+</header>
+
+<main id="huertasContainer" class="container"></main>
+
+<footer>
+    <p>Derechos de Autor &copy; 2024</p>
+</footer>
+<!-- Modal para agregar huertas -->
+<div class="modal" id="addHuertaModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Huerta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario para agregar huertas -->
+          <form id="addHuertaForm">
+            <div class="form-group">
+              <label for="huertaTitle">Título</label>
+              <input type="text" class="form-control" id="huertaTitle" required>
+            </div>
+            <div class="form-group">
+              <label for="huertaDireccion">Dirección</label>
+              <input type="text" class="form-control" id="huertaDireccion" required>
+            </div>
+            <div class="form-group">
+              <label for="huertaDescripcion">Descripción</label>
+              <textarea class="form-control" id="huertaDescripcion" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">URL de la imagen</label>
+                <input type="text" class="form-control" id="imageUrl">
+              </div>
+          </form>
+          <input type="file" id="newImageInput2" accept="image/*">
+          <button id="uploadedImageUrl">Actualizar Imágenes</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="saveHuertaBtn">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal para editar noticias -->
+<div class="modal" id="editNewsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario para editar noticias -->
+                <form id="editNewsForm">
+                    <input type="hidden" id="editNewsId">
+                    <div class="form-group">
+                        <label for="editTitle">Título</label>
+                        <input type="text" class="form-control" id="editTitle" required>
+                    </div>
+        
+          
+                    <div class="form-group">
+                        <label for="editDireccion">Direccion</label>
+                        <input class="form-control" id="editDireccion" required>
+                    </div>          
+                    <div class="form-group">
+                        <label for="editContent">Descripcion</label>
+                        <input class="form-control" id="editContent" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editImageUrl">URL de la imagen</label>
+                        <input type="text" class="form-control" id="editImageUrl">
+                    </div>
+               
+                </form>
+                <input type="file" id="newImageInput" multiple accept="image/*">
+                <button id="updateImageButton">Actualizar Imágenes</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="updateNewsBtn">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para agregar imágenes a una huerta -->
+<div class="modal" id="addHuertaImagesModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Agregar Imágenes a la Huerta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <!-- Formulario para agregar imágenes -->
+              <form id="addHuertaImagesForm">
+                  <div class="form-group">
+                      <label for="newImageInput2">Seleccione una o más imágenes:</label>
+                      <input type="file" class="form-control-file" id="newImageInput3" multiple accept="image/*">
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="guardarImagenesBtn">Guardar Imágenes</button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Tu script personalizado -->
+<script src="script.js"></script>
+<script src="subir.js"></script>
+
+</body>
+<div id="mensaje"></div>
+
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.news-item {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.huerta-img {
+    max-width: 300px !important; /* Establecer el ancho máximo deseado */
+    height: auto; /* Mantener la proporción de aspecto */
+}
+.huerta-img2{
+    max-width:150px !important;
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan a la siguiente línea si no hay suficiente espacio horizontal */
+    justify-content: flex-start; /* Alinea las imágenes al principio del contenedor */
+}
+.huerta-item {
+    flex: 0 0 auto; /* Permite que los elementos se ajusten automáticamente al ancho de su contenido */
+    margin-right: 20px; /* Agrega espacio entre las imágenes */
+    margin-bottom: 20px; /* Agrega espacio entre las filas de imágenes */
+}
