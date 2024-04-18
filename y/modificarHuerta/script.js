@@ -95,16 +95,82 @@ document.addEventListener('DOMContentLoaded', function() {
         // Agregar botón de agregar fotos
         const agregarBtn = document.createElement('button');
         agregarBtn.textContent = 'Agregar Fotos!!';
-        agregarBtn.classList.add('btn', 'btn-success', 'agregar-btn');
+        agregarBtn.classList.add('btn', 'btn-warning', 'agregar-btn');
         agregarBtn.addEventListener('click', function() {
             // Llama a la función para agregar una huerta
             agregarImagenHuerta(huerta);
         });
         huertaItem.appendChild(agregarBtn);
+        // Agregar botón de descarga de Excel
+        const excelBtn = document.createElement('button');
+        excelBtn.textContent = 'Descargar Excel!!';
+        excelBtn.classList.add('btn', 'btn-success', 'agregar-btn');
+        excelBtn.addEventListener('click', function() {
+            // Llama a la función para descargar el archivo Excel
+            crearExcel(huerta);
+        });
+        huertaItem.appendChild(excelBtn);
+            
     
         return huertaItem;
     }
-    
+    function crearExcel(huertas) {
+        // Obtener los datos de la huerta desde el servidor
+        fetch(`https://unsahuertas.pythonanywhere.com/users/${huertas.idhuertas}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudieron obtener los datos de la huerta del servidor');
+                }
+                return response.json();
+            })
+            .then(users => {
+                createAndDownloadExcel(users,huertas);
+
+            })
+            .catch(error => {
+                alert('No hay usuarios en la huerta')
+                console.error('Error al crear el archivo Excel:', error);
+            });
+    }
+    // Función para crear y descargar el archivo Excel
+    function createAndDownloadExcel(users,huertas) {
+        // Crear un objeto de tipo Blob que contiene los datos en formato CSV
+        const csvData = new Blob([convertToCSV(users)], { type: 'text/csv;charset=utf-8' });
+
+        // Crear un objeto URL para el Blob creado
+        const csvUrl = URL.createObjectURL(csvData);
+
+        // Crear un enlace <a> para descargar el archivo Excel
+        const downloadLink = document.createElement('a');
+        downloadLink.href = csvUrl;
+        downloadLink.download = `${huertas.titulo}`; // Nombre del archivo
+        downloadLink.click();
+
+        // Liberar el objeto URL después de la descarga
+        URL.revokeObjectURL(csvUrl);
+    }
+
+// Función para convertir los datos JSON a formato CSV
+function convertToCSV(data) {
+    // Crear un array con las cabeceras del archivo CSV
+    const headers = Object.keys(data[0]);
+
+    // Crear un array vacío para almacenar las filas de datos
+    const rows = [];
+
+    // Agregar las cabeceras como la primera fila del archivo CSV
+    rows.push(headers.join(';'));
+
+    // Iterar sobre los datos y agregarlos al array de filas
+    data.forEach(item => {
+        const values = headers.map(header => item[header]);
+        rows.push(values.join(';'));
+    });
+
+    // Unir las filas usando saltos de línea
+    return rows.join('\n');
+}
+
  // Función para cargar las imágenes de una huerta desde el servidor
  function loadHuertaImages(idhuertas, huertaItem) {
     const url = `https://unsahuertas.pythonanywhere.com/imagen/${idhuertas}`;
@@ -149,7 +215,7 @@ function displayHuertaImages(images, huertaItem,idhuertas) {
     });
 }
 // Función para eliminar una imagen de una huerta
-function deleteHuertaImage(idhuertas, idimagen) {
+function deleteHuertaImage(idimagen) {
     // Realizar una solicitud DELETE para eliminar la imagen del servidor
     fetch(`https://unsahuertas.pythonanywhere.com/imagen/${idimagen}`, {
         method: 'DELETE'
@@ -437,5 +503,8 @@ async function agregarImagenHuerta(huerta) {
         }
     });
 }
+
+
+
 
 });
