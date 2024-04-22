@@ -110,6 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
             crearExcel(huerta);
         });
         huertaItem.appendChild(excelBtn);
+        // Agregar botón de descarga de Excel
+        const asistenciabtn = document.createElement('button');
+        asistenciabtn.textContent = 'Practicas y asistencia';
+        asistenciabtn.classList.add('btn', 'btn-secondary', 'agregar-btn');
+        asistenciabtn.addEventListener('click', function() {
+            // Llama a la función para descargar el archivo Excel
+            window.location.href = `../practicas/practicas.html?id=${huerta.idhuertas}`;
+
+        });
+        huertaItem.appendChild(asistenciabtn);
+        
             
     
         return huertaItem;
@@ -153,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Función para convertir los datos JSON a formato CSV
 function convertToCSV(data) {
     // Crear un array con las cabeceras del archivo CSV
-    const headers = Object.keys(data[0]);
+    const headers = Object.keys(data[0]).filter(header => header !== 'asistio'); // Excluir 'asistio'
 
     // Crear un array vacío para almacenar las filas de datos
     const rows = [];
@@ -163,6 +174,7 @@ function convertToCSV(data) {
 
     // Iterar sobre los datos y agregarlos al array de filas
     data.forEach(item => {
+        // Filtrar los valores para excluir 'asistio'
         const values = headers.map(header => item[header]);
         rows.push(values.join(';'));
     });
