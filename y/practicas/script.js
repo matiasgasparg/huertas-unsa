@@ -79,12 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         // Obtener los valores del formulario
+        const titulo= document.getElementById('titulo').value;
         const descripcion = document.getElementById('descripcion').value;
         const fecha = document.getElementById('fecha').value;
         const responsables = document.getElementById('responsables').value;
 
         // Crear un objeto con los detalles de la práctica
         const nuevaPractica = {
+            titulo: titulo,
             descripcion: descripcion,
             fecha: fecha,
             responsables: responsables
@@ -132,9 +134,11 @@ function displayPracticas(practicas, huertaId) {
         card.innerHTML = `
             <div class="card" data-toggle="modal" data-target="#usuariosModal" onclick="mostrarUsuarios(${huertaId},${practica.idpractica})">
                 <div class="card-body">
-                    <h5 class="card-title">${practica.descripcion}</h5>
-                    <p class="card-text">Fecha: ${practica.fecha}</p>
+                    <h5 class="card-title">${practica.titulo}</h5>
+                    <h5 class="card-text">${practica.descripcion}</h5>
                     <p class="card-text">Responsables: ${practica.responsables}</p>
+                    <p class="card-subtitle">Fecha: ${practica.fecha}</p>
+
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-danger" onclick="mostrarModal(${practica.idpractica})">Borrar</button>
